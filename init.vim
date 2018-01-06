@@ -1,13 +1,13 @@
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree'
-Plug 'vim-airline/vim-airline'
-Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdcommenter'
-Plug 'skielbasa/vim-material-monokai'
+Plug 'scrooloose/nerdtree' " file explorer
+Plug 'vim-airline/vim-airline' " shows information in buffer footer
+Plug 'tpope/vim-fugitive' " git wrapper
+Plug 'scrooloose/nerdcommenter' " plugin to write comments
+Plug 'skielbasa/vim-material-monokai' " colorscheme
 Plug 'Shougo/deoplete.nvim' " enables code completion
 Plug 'zchee/deoplete-clang' " enables clang for deoplete
-Plug 'Shougo/neoinclude.vim' " enables completion from header files
-Plug 'neomake/neomake' " error checker
+Plug 'Shougo/neoinclude.vim' " enables completion from c header files
+Plug 'neomake/neomake' " c language error checker
 call plug#end()
 call neomake#configure#automake('nw', 500) " calls neomake after 500ms
 
@@ -44,7 +44,7 @@ highlight colorcolumn guibg=#015577
 set number
 set cursorline
 set termguicolors
-set colorcolumn=80
+set colorcolumn=80 " a reminder to write short codelines
 set tabstop=4 " tab spacing is set to 4
 set shiftwidth=4 " intendation in new line is set to 4
 
