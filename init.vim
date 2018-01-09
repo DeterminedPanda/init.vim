@@ -25,18 +25,7 @@ tnoremap <c-j> <C-\><C-N><C-w>j
 tnoremap <c-k> <C-\><C-N><C-w>k
 tnoremap <c-l> <C-\><C-N><C-w>l
 
-" pfeiltasten nutzlos machen, damit alex nicht nervt, kann später weg
-noremap <UP> <Nop>
-noremap <DOWN> <Nop>
-noremap <LEFT> <Nop>
-noremap <RIGHT> <Nop>
-
-" pfeiltasten im insert modus ausschalten
-inoremap <UP> <Nop>
-inoremap <DOWN> <Nop>
-inoremap <LEFT> <Nop>
-inoremap <RIGHT> <Nop>
-tnoremap <Esc> <C-\><C-n>
+tnoremap <Esc> <C-\><C-n> " remap normal mode to ESC
 
 colorscheme material-monokai
 highlight colorcolumn guibg=#015577
