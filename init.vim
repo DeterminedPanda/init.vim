@@ -31,6 +31,8 @@ colorscheme material-monokai
 highlight colorcolumn guibg=#015577
 
 set number
+set splitbelow
+set splitright
 set cursorline
 set termguicolors
 set colorcolumn=80 " a reminder to write short codelines
