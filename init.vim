@@ -25,7 +25,7 @@ tnoremap <c-j> <C-\><C-N><C-w>j
 tnoremap <c-k> <C-\><C-N><C-w>k
 tnoremap <c-l> <C-\><C-N><C-w>l
 
-tnoremap <Esc> <C-\><C-n> " remap normal mode to ESC
+tnoremap <Esc> <C-\><C-n> " remap normal mode to ESC while in terminal mode
 
 colorscheme material-monokai
 highlight colorcolumn guibg=#015577
