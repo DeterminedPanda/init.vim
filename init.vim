@@ -25,6 +25,8 @@ tnoremap <c-l> <C-\><C-N><C-w>l
 
 tnoremap <Esc> <C-\><C-n> 
 
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
 colorscheme material-monokai
 highlight colorcolumn guibg=#015577
 
