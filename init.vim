@@ -36,7 +36,7 @@ colorscheme material-monokai " sets the colorscheme
 highlight colorcolumn guibg=#015577 " creates a vertical line, as a reminder to write short code lines
 
 set number " enables line numbers
-set splitbelow " opents splits to the bottom of your current buffer
+set splitbelow " opens splits to the bottom of your current buffer
 set splitright " opens new splits to the right of your current buffer
 set cursorline " makes it easier to see in which line you currently are
 set termguicolors " uses terminal gui settings
