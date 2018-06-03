@@ -1,2 +1,2 @@
-# NeoVim conif
-NeoVim config file for C programming
+# Neovim conif
+Neovim config file for C programming
