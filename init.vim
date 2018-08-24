@@ -4,14 +4,13 @@ call plug#begin('~/.vim/plugged') " all plugins need to be added between call pl
   Plug 'tpope/vim-fugitive' " git wrapper
   Plug 'scrooloose/nerdcommenter' " plugin to write comments
   Plug 'skielbasa/vim-material-monokai' " cute colorscheme
-  Plug 'Valloric/YouCompleteMe'
   Plug 'Shougo/deoplete.nvim' " enables code completion
   Plug 'zchee/deoplete-clang' " enables c code completion for deoplete
   Plug 'Shougo/neoinclude.vim' " enables completion from c header files
   Plug 'neomake/neomake' " enables a error checker for c
+  Plug 'Valloric/YouCompleteMe' " code completion engine used for Java
 call plug#end()
-
-call neomake#configure#automake('nw', 500) " calls neomake after 500ms
+call neomake#configure#automake('nw', 350) " calls neomake after 500ms
 
 " makes it possible to toggle NERDTree by pressing CTRL+N
 nnoremap <c-n> :NERDTreeToggle <CR>
@@ -35,7 +34,7 @@ tnoremap <Esc> <C-\><C-n>
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>" 
 
 colorscheme material-monokai " sets the colorscheme
-highlight colorcolumn guibg=#015577 " creates a vertical line, as a reminder to write short code lines
+highlight colorcolumn guibg=#015577 " creates a vertical line, as a reminder to write shorter code lines
 
 set number relativenumber " enables line numbers
 set splitbelow " opens splits to the bottom of your current buffer
@@ -51,7 +50,9 @@ set completeopt-=preview " disables YouCompleteMe's scratch splitscreen
 let g:ycm_error_symbol = '!!' " replaces the '>>' error-indicator in YouCompleteMe with '!!'
 let g:NERDTreeShowLineNumbers=1 " shows line numbers in NERDTree
 let g:airline_powerline_fonts=1 " enables a powerline font
+let g:deoplete#enable_at_startup=1 " automatically start deoplete with nvim
 let g:deoplete#sources#clang#libclang_path='/usr/lib/libclang.so' " set the path to libclang
 let g:deoplete#sources#clang#clang_header='/usr/lib/clang' " sets the path to clangs header
+let g:ycm_filetype_blacklist = { 'c': 1, 'cpp' : 1 } " disables YouCompleteMe for all filetypes inside of the list
 
-autocmd Termopen * setlocal nonumber " disables lines in :terminal
+autocmd Termopen * setlocal nonumber " disables  lines in :terminal
