@@ -41,7 +41,6 @@ set splitbelow " opens splits to the bottom of your current buffer
 set splitright " opens new splits to the right of your current buffer
 set cursorline " makes it easier to see in which line you currently are
 set termguicolors " uses terminal gui settings
-
 set colorcolumn=120 " a reminder to write short codelines
 set tabstop=4 " tab spacing is set to 4
 set shiftwidth=4 " intendation in new line is set to 4
@@ -55,4 +54,6 @@ let g:deoplete#sources#clang#libclang_path='/usr/lib/libclang.so' " set the path
 let g:deoplete#sources#clang#clang_header='/usr/lib/clang' " sets the path to clangs header
 let g:ycm_filetype_blacklist = { 'c': 1, 'cpp' : 1 } " disables YouCompleteMe for all filetypes inside of the list
 
-autocmd Termopen * setlocal nonumber " disables  lines in :terminal
+" disables all kinds of line numbers in :terminal mode
+autocmd Termopen * setlocal norelativenumber
+autocmd Termopen * setlocal nonumber
