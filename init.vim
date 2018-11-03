@@ -3,12 +3,13 @@ call plug#begin('~/.vim/plugged') " all plugins need to be added between call pl
   Plug 'vim-airline/vim-airline' " shows information in the footer of the current buffer
   Plug 'tpope/vim-fugitive' " git wrapper
   Plug 'scrooloose/nerdcommenter' " plugin to write comments
-  Plug 'skielbasa/vim-material-monokai' " cute colorscheme
+  Plug 'DeterminedPanda/vim-material-monokai' " colorscheme
   Plug 'Shougo/deoplete.nvim' " enables code completion
   Plug 'zchee/deoplete-clang' " enables c code completion for deoplete
   Plug 'Shougo/neoinclude.vim' " enables completion from c header files
   Plug 'neomake/neomake' " enables a error checker for c
   Plug 'Valloric/YouCompleteMe' " code completion engine used for Java
+  Plug 'lervag/vimtex' " LaTeX environment
 call plug#end()
 
 " toggles NERDTree by pressing CTRL+N
@@ -38,7 +39,7 @@ colorscheme material-monokai " sets the colorscheme
 " write shorter lines of code
 highlight colorcolumn guibg=#015577
 
-set number relativenumber " enables iine numbers
+set number " enables line numbers
 set splitbelow " opens splits to the bottom of your current buffer
 set splitright " opens new splits to the right of your current buffer
 set cursorline " makes it easier to see in which line you currently are
@@ -47,7 +48,7 @@ set colorcolumn=120 " draws a vertical line at the specified column number
 set tabstop=4 " tab spacing is set to 4
 set shiftwidth=4 " intendation in new line is set to 4
 set completeopt-=preview " disables YouCompleteMe's scratch splitscreen
-
+let g:airline_theme='materialmonokai' " set airline theme
 let g:ycm_error_symbol = '??' " replaces the '>>' error-indicator in YouCompleteMe
 let g:NERDTreeShowLineNumbers=1 " shows line numbers in NERDTree
 let g:airline_powerline_fonts=1 " enables powerline fonts
@@ -60,5 +61,5 @@ let g:ycm_filetype_blacklist = { 'c': 1, 'cpp' : 1 } " disables YouCompleteMe fo
 autocmd Termopen * setlocal norelativenumber
 autocmd Termopen * setlocal nonumber
 
-" automatically closes vim, when NERDTree is the only window open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" reduces the update time of the pdf to 1 second
+autocmd Filetype tex setl updatetime=500
