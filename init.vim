@@ -1,15 +1,16 @@
 call plug#begin('~/.vim/plugged') " all plugins need to be added between call plug#begin and call plug#end
-  Plug 'scrooloose/nerdtree' " file explorer
-  Plug 'vim-airline/vim-airline' " shows information in the footer of the current buffer
-  Plug 'tpope/vim-fugitive' " git wrapper
-  Plug 'scrooloose/nerdcommenter' " plugin to write comments
-  Plug 'DeterminedPanda/vim-material-monokai' " colorscheme
-  Plug 'Shougo/deoplete.nvim' " enables code completion
-  Plug 'zchee/deoplete-clang' " enables c code completion for deoplete
-  Plug 'Shougo/neoinclude.vim' " enables completion from c header files
-  Plug 'neomake/neomake' " enables a error checker for c
-  Plug 'Valloric/YouCompleteMe' " code completion engine used for Java
-  Plug 'lervag/vimtex' " LaTeX environment
+Plug 'scrooloose/nerdtree' " file explorer
+Plug 'vim-airline/vim-airline' " shows information in the footer of the current buffer
+Plug 'tpope/vim-fugitive' " git wrapper
+Plug 'airblade/vim-gitgutter' " shows git diff
+Plug 'scrooloose/nerdcommenter' " plugin to write comments
+Plug 'DeterminedPanda/vim-material-monokai' " colorscheme
+Plug 'Shougo/deoplete.nvim' " enables code completion
+Plug 'zchee/deoplete-clang' " enables c code completion for deoplete
+Plug 'Shougo/neoinclude.vim' " enables completion from c header files
+Plug 'neomake/neomake' " enables a error checker for c
+Plug 'Valloric/YouCompleteMe' " code completion engine used for Java
+Plug 'lervag/vimtex' " LaTeX environment
 call plug#end()
 
 " toggles NERDTree by pressing CTRL+N
@@ -48,6 +49,9 @@ set colorcolumn=120 " draws a vertical line at the specified column number
 set tabstop=4 " tab spacing is set to 4
 set shiftwidth=4 " intendation in new line is set to 4
 set completeopt-=preview " disables YouCompleteMe's scratch splitscreen
+set list lcs=tab:\|\ " shows indentation lines. The space before the comment must be included
+set updatetime=100
+let g:gitgutter_highlight_lines = 1
 let g:airline_theme='materialmonokai' " set airline theme
 let g:ycm_error_symbol = '??' " replaces the '>>' error-indicator in YouCompleteMe
 let g:NERDTreeShowLineNumbers=1 " shows line numbers in NERDTree
@@ -63,3 +67,8 @@ autocmd Termopen * setlocal nonumber
 
 " reduces the update time of the pdf to 1 second
 autocmd Filetype tex setl updatetime=500
+
+if !exists('g:ycm_semantic_triggers')                                                                                                                                                     
+	let g:ycm_semantic_triggers = {}                                                                                                                                                      
+endif                                                                                                                                                                                     
+let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme 
