@@ -12,6 +12,7 @@ Plug 'neomake/neomake' " enables a error checker for c
 Plug 'Valloric/YouCompleteMe' " code completion engine used for Java
 Plug 'lervag/vimtex' " LaTeX environment
 Plug 'jiangmiao/auto-pairs' " Auto pairs brackets
+Plug 'gko/vim-coloresque' " shows the color of hex values
 call plug#end()
 
 " toggles NERDTree by pressing CTRL+N
